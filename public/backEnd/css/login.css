@@ -1,0 +1,99 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+body {
+	background-color: #fff;
+	font-family: arial;
+}
+/*---------------------log_in_css------------------------------*/
+	
+	.header_login{ background: #eee;
+	border-bottom-color: #999;
+	padding-bottom: 0px;
+	border-bottom: solid 1px #999 !important;
+	background: -moz-linear-gradient(top, #fafafa, #e1e1e1);
+	background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#e1e1e1));
+	padding-top: 1px;
+    padding-bottom: 4px;
+	padding-left:22px;
+	}
+	.login_area{
+	max-width:45%; height:auto;
+	box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 3px;
+	margin-bottom: 32px;
+	background: rgb(255, 255, 255);
+	margin: 130px auto;
+	
+	}
+	.header_login img{
+		width:130px;
+		
+	}
+	
+  .login-body {
+	  
+
+}
+ .login-body h2 {
+    font-weight: 300;
+    color: #333;
+    font-size: 28px;
+    padding:0px;
+	text-shadow:0px 1px 0px #fff;
+font-family: 'Open Sans Condensed', sans-serif;
+}
+ .login-body form {
+    padding: 0 30px;
+}
+.email input, .pw input{
+    padding: 8px 12px;
+    height: 35px;
+	border-radius:0px; box-shadow:none;
+}
+.submit {
+    margin-top: 15px;
+}
+.remember {
+    float: left;
+    margin-top: 5px;
+    margin-left: 1px;
+}
+.icheckbox_square-blue {
+    float: left;
+	background-position: 0 0;
+}
+
+.submit input {
+    float: right;
+}
+.remember label{ margin-left:6px; color:#333;}
+.btn.btn-primary {
+    background: #368ee0;
+    color: #fff;
+    text-shadow: none;
+    filter: none;
+	float:right;
+	padding: 8px 17px;
+	border:0px;
+	border-radius:0px;
+}
+.forget {
+    margin-top:80px;
+	background-color: #EEEEEE;
+	text-align:center;
+	padding-top:14px;
+	padding-bottom:14px;
+	border-top:solid 1px #d7d7d7;
+}
+.login_area2{ max-width:80% !important;}
+.pw select {
+    padding: 8px 12px;
+    height: 35px;
+    border-radius: 0px;
+    box-shadow: none;
+}
+.textsty{ width:100%; height:auto; border:solid 1px #d7d7d7; border-radius:0px;}
+  @media (min-width:200px) and (max-width:991px) {
+	.login_area{ max-width:80%;}
+}
+@media (min-width:200px) and (max-width:400px) {
+	.login_area{ max-width:100%;}
+}
