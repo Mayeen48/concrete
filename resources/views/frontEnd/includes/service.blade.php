@@ -1,8 +1,8 @@
 
 
-<section class="service" id="service">
+<section class="service" id="packages">
     <div class="container">
-        <h2 class="text-center">Our services</h2>
+        <h2 class="text-center">Our Packages</h2>
         <p class="text-center">Concrete Tours & Travels.</p>
         <div class="row">
             <div class="col-lg-3 col-md-3 serv-w3ls">

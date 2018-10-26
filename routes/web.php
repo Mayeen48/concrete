@@ -13,6 +13,11 @@ Route::post('/inquiry', 'Packages@inquiry')->name('inquiry');
 Route::post('/airTicket', 'Packages@airTicket')->name('airTicket');
 
 
+Route::post('/contact', 'ContactController@contactStore')->name('contact');
+Route::get('/slideDetails/{id}', 'SlideController@slideShow')->name('slideDetails');
+
+
+
 Auth::routes();
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
@@ -59,5 +64,22 @@ Route::get('/deleteTicketRequest/{id}', 'PackageController@deleteTicketRequest')
 
 
 Route::get('/gallery', 'galleryController@index');
-Route::post('/galleryStore', 'galleryController@galleryStore');
+Route::post('/galleryStore', 'galleryController@galleryStore')->name('galleryStore');
+Route::get('/galleryDelete/{id}', 'galleryController@galleryDelete')->name('galleryDelete');
 
+
+Route::get('/testimonial', 'TestimonialController@testimonial')->name('testimonial');
+Route::post('/testimonialStore', 'TestimonialController@store')->name('testimonialStore');
+Route::get('/testimonialDelete/{id}', 'TestimonialController@testimonialDelete')->name('testimonialDelete');
+
+Route::get('/hcr', 'HcrController@hcr')->name('hcr');
+Route::post('/hcrSetup', 'HcrController@hcrSetup')->name('hcrSetup');
+
+Route::get('/contacts', 'ContactController@contacts')->name('contacts');
+Route::get('/ContactStatus/{id}', 'ContactController@ChengeStatus')->name('ContactStatus');
+Route::get('/ContactDelete/{id}', 'ContactController@ContactDelete')->name('ContactDelete');
+
+
+Route::get('/slideSetup', 'SlideController@slideSetup')->name('slideSetup');
+Route::post('/slideStore', 'SlideController@slideStore')->name('slideStore');
+Route::get('/slideDelete/{id}', 'SlideController@slideDelete')->name('slideDelete');

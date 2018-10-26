@@ -3,14 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/XAMPP/htdocs/concrete/resources/views/frontEnd/includes/service.blade.php</file>
-            <file>file:/E:/XAMPP/htdocs/concrete/app/Http/Controllers/Packages.php</file>
-            <file>file:/E:/XAMPP/htdocs/concrete/resources/views/frontEnd/includes/airTicket.blade.php</file>
             <file>file:/E:/XAMPP/htdocs/concrete/routes/web.php</file>
-            <file>file:/E:/XAMPP/htdocs/concrete/resources/views/frontEnd/Layout/master.blade.php</file>
-            <file>file:/E:/XAMPP/htdocs/concrete/resources/views/frontEnd/includes/packages.blade.php</file>
-            <file>file:/E:/XAMPP/htdocs/concrete/public/frontEnd/at/css/style.css</file>
-            <file>file:/E:/XAMPP/htdocs/concrete/public/frontEnd/css/style_at.css</file>
+            <file>file:/E:/XAMPP/htdocs/concrete/resources/views/backEnd/others/testimonial.blade.php</file>
+            <file>file:/E:/XAMPP/htdocs/concrete/app/Http/Controllers/TestimonialController.php</file>
+            <file>file:/E:/XAMPP/htdocs/concrete/resources/views/backEnd/others/hcr.blade.php</file>
+            <file>file:/E:/XAMPP/htdocs/concrete/resources/views/frontEnd/includes/testimunial.blade.php</file>
+            <file>file:/E:/XAMPP/htdocs/concrete/app/Http/Controllers/HomeController.php</file>
         </group>
     </open-files>
 </project-private>

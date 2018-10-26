@@ -10,7 +10,7 @@
 					<div class="col-xs-8 contact-agile2">
 						<div class="address">
 							<h4>Visit Us</h4>
-							<p>Jack street,Chicago,USA.</p>
+							<p>concretetoursebd.com</p>
 						</div>	
 					</div>	
 				</div>
@@ -21,7 +21,7 @@
 					<div class="col-xs-8 contact-agile2">
 						<div class="address">
 							<h4>Mail Us</h4>
-							<p><a href="mailto:email@example.com">email@example.com</a></p>
+							<p><a href="mailto:concretetours@gmail.com">concretetours@gmail.com</a></p>
 						</div>	
 					</div>
 				</div>
@@ -32,7 +32,7 @@
 					<div class="col-xs-8 contact-agile2">
 						<div class="address">
 							<h4>Call Us</h4>
-							<p>+01 0101 01010101</p>
+							<p>008801750 000 308</p>
 						</div>
 					</div>
 				</div>
@@ -43,7 +43,7 @@
 					<div class="col-xs-8 contact-agile2">
 						<div class="address">
 							<h4>Our Working Hours</h4>
-							<p>Monday - Friday : 08 Am - 07 Pm</p>
+							<p>Saturday - Thursday : 09 AM - 06 PM</p>
 						</div>
 					</div>
 				</div>
@@ -51,19 +51,21 @@
 		</div>
 		<div class="col-lg-6 col-md-6 contact-wthree2">
 			<h3 class="head2">Your Comments</h3>
-			<form action="#" method="post">
+			
 				<div class="row">
+                                    <div class="alert" id="messageContact" style="display: none"></div>
+                                    {{ Form::open(['method' => 'post','id'=>'contact_form']) }}
 					<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
-						<input type="text" class="form-control first-name" name="firstname" placeholder="First Name" required/>
+						<input type="text" class="form-control first-name" name="firstName" placeholder="First Name"/>
 					</div>
 					<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
-						<input type="text" class="form-control last-name" name="lastname" placeholder="Last Name" required/>
+						<input type="text" class="form-control last-name" name="lastName" placeholder="Last Name"/>
 					</div>
 					<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
-						<input type="email" class="form-control mail" name="mail" placeholder="Your Email" required/>
+						<input type="email" class="form-control mail" name="email" placeholder="Your Email"/>
 					</div>
 					<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
-						<input type="tel" class="form-control pno" name="phone" placeholder="Your Phone Number" required/>
+						<input type="tel" class="form-control pno" name="phone" placeholder="Your Phone Number"/>
 					</div>
 					<div class="clearfix"></div>
 					<div class="form-group col-lg-12 slideanim">
@@ -72,8 +74,48 @@
 					<div class="form-group col-lg-12 slideanim">
 						<button type="submit" class="btn btn-lg btn-outline">Send Message</button>
 					</div>
+                                        {{ Form::close() }}
 				</div>
-			</form>
+			
 		</div>
-	</div>
+	</div><script>
+$(document).ready(function () {
+//    alert(444);
+    $('#contact_form').on('submit', function (event) {
+        event.preventDefault();
+//        alert("{{ route('inquiry') }}");
+//return false;
+        $.ajax({
+                    url: "{{ route('contact') }}",
+                    method: "POST",
+                    data: new FormData(this),
+                    dataType: 'JSON',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function (data)
+                        {
+
+                        $('#messageContact').css('display', 'block');
+                        $('#messageContact').html(data.message);
+                        $('#messageContact').addClass(data.class_name);
+                        if(data.status===1){
+                            $("#contact_form")[0].reset();
+                        }
+                        
+                        
+                        $('html, body').animate({
+                        scrollTop: $("#messageContact").offset().top
+                        }, 1000);
+                    },error: function () {
+                        $('html, body').animate({
+                        scrollTop: $("#messageContact").offset().top
+                        }, 1000);
+                       alert("Error");
+                    }
+    });
+});
+});
+
+</script>
 </section>

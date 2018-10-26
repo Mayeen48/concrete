@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 @include('frontEnd.includes.airTicket')
 <!-- /Air Ticketing section -->
 <!-- event section-->
-@include('frontEnd.includes.events')
+<!--@include('frontEnd.includes.events')-->
 <!-- /event section -->
 <!-- team section -->
 @include('frontEnd.includes.team')
@@ -78,8 +78,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 @include('frontEnd.includes.contact')
 <!-- /contact section -->
 <!-- map section -->
-@include('frontEnd.includes.map')
+<!--@include('frontEnd.includes.map')-->
 <!-- /map section -->
+<!-- facebook section -->
+@include('frontEnd.includes.fb')
+<!-- /facebook section -->
 <!-- footer section -->
 @include('frontEnd.includes.footer')
 <!-- /footer section -->
@@ -191,6 +194,38 @@ $(document).ready(function () {
 });
 });
 
+</script>
+
+<script>
+$(document).ready(function(){
+ 
+ function fetch_modal_data(post_id)
+ {
+  $.ajax({
+   url:"{{url('/slideDetails/')}}"+'/'+post_id,
+   method:"GET",
+//   data:{post_id},
+   success:function(data)
+   {
+    $('#post_modal').modal('show');
+    var response = JSON.parse(data);
+//    console.log(response.pId);
+    $('#title').html(response.title);
+      var img = "<img src='{{asset('public/images/slides/')}}"+'/'+response.image+"' class='img-responsive'>";
+        $('#image').html(img);
+        $('#description').html(response.description);
+//    $('#pName').val(response.packageName);
+//    $('#pId').val(response.pId);
+   }
+  });
+ }
+
+ $(document).on('click', '.slide_details', function(){
+  var post_id = $(this).attr("id");
+  fetch_modal_data(post_id);
+ });
+
+});
 </script>
 </body>
 </html>
